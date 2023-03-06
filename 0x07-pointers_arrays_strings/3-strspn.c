@@ -1,12 +1,28 @@
 #include "main.h"
-
 /**
- * _strchr - Locates a character in a string.
- * @s: The string to bebe searched.
- * @c: The character to be located.
- *
- * Return: If c is found - a pointer to the first occurence.
- * 	If c is not found - NULL
+ * _strspn - Entry point
+ * @s: input
+ * @accept: input
+ * Return: Always 0 (Success)
  */
+unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int n = 0;
+	int r;
 
-
+	while (*s)
+	{
+		for (r = 0; accept[r]; r++)
+		{
+			if (*s == accept[r])
+			{
+				n++;
+				break;
+			}
+			else if (accept[r + 1] == '\0')
+				return (n);
+		}
+		s++;
+	}
+	return (n);
+}
