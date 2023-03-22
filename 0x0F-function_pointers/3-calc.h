@@ -7,7 +7,7 @@
 * @f: The associated function.
 */
 
-typedef struct op;
+typedef struct op
 {
 	char *op;
 
